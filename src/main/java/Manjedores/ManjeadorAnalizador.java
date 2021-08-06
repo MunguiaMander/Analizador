@@ -4,17 +4,18 @@
  * and open the template in the editor.
  */
 
-package Main;
-import frontend.Principal;
+package Manjedores;
+
+import Analizadores.Analizador;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
 /**
  * 
  * @author Marco Munguia <@markomannder>
  */
-public class Main {
-    
-    public static void main(String[] args){
-       Principal iniciarAnalizador = new  Principal();
-       iniciarAnalizador.setVisible(true);
-    }
+public class ManjeadorAnalizador {
+
 
 }

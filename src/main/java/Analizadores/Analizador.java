@@ -6,6 +6,7 @@
 package Analizadores;
 
 import java.util.ArrayList;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -13,11 +14,13 @@ import java.util.ArrayList;
  */
 public class Analizador {
 
-    public void Analizar() {
-        String cadenaCaracteres = "a345. 3.1416 324.213.4 asdd a 1234.4f 123124 12344";
-        String espacio = "";
-        ArrayList<String> caracteresSeparados = new ArrayList<>();
-        int contador = 0;
+    private String cadenaCaracteres;
+    private String espacio = "";
+    private ArrayList<String> caracteresSeparados = new ArrayList<>();
+    private int contador = 0;
+
+    public void Analizar(JTextArea areaInfo) {
+
         for (char tmpChar : cadenaCaracteres.toCharArray()) {
             contador++;
             if (tmpChar != ' ') {
@@ -29,8 +32,7 @@ public class Analizador {
             }
         }
         for (String string : caracteresSeparados) {
-            System.out.print("---------------------\n type: " + asignadorTipo(string) + "\n word: ");
-            System.out.println(string);
+            areaInfo.setText(areaInfo.getText() + "\n---------------------\n Tipo: " + asignadorTipo(string) + "\n Cadena: " + string);
         }
     }
 
@@ -73,12 +75,12 @@ public class Analizador {
         if (banderaChar) {
             return esID;
         }
-        
+
         //Retorna Numero o Decimal dependiendo de la evaluacion
         if (banderaNumero) {
             if ((banderaDecimal) && (contadorPuntos == 1)) {
                 return esDecimal;
-            } else if((banderaDecimal) && (contadorPuntos > 1)){
+            } else if ((banderaDecimal) && (contadorPuntos > 1)) {
                 return noSoportado;
             }
             return esNumero;
@@ -86,5 +88,10 @@ public class Analizador {
 
         return noSoportado;
     }
+
+    public void setCadenaCaracteres(String cadenaCaracteres) {
+        this.cadenaCaracteres = cadenaCaracteres;
+    }
+    
 
 }
