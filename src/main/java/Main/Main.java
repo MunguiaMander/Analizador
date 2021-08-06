@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.analizador;
-
+package Main;
+import Analizadores.Analizador;
+import frontend.Principal;
 /**
  * 
  * @author Marco Munguia <@markomannder>
@@ -13,7 +14,10 @@ package com.mycompany.analizador;
 public class Main {
     
     public static void main(String[] args){
-        
+       //Principal iniciarAnalizador = new  Principal();
+       //iniciarAnalizador.setVisible(true);
+       Analizador iniciarAnalizador = new Analizador();
+       iniciarAnalizador.Analizar();
     }
 
 }
