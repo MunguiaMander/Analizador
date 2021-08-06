@@ -15,12 +15,14 @@ public class Principal extends javax.swing.JFrame {
 
    
     
+    ManjeadorAnalizador manejadorAnalizador = new ManjeadorAnalizador();
+    
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
-        
+        manejadorAnalizador.iniciarAnalizar(jButton1, textoAnalizarJTextField, jTextArea1);
     }
 
     /**
